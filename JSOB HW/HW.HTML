@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proj</title>
+</head>
+
+<body>
+    <h1>Project details</h1>
+    <p>In this project, you will be creating an array and map it with any number and arrange the mapped array elements
+        in
+        ascending order and descending order.</p>
+
+    Enter Array Elements: <input type="text" placeholder="Enter numbers sep by ," id="arrInput">
+    <button id="btn_arr">Submit</button> <br><br>
+
+    Array : <p id="arr_result"></p>
+
+    <script>
+        const btn_arr = document.getElementById("btn_arr");
+        btn_arr.addEventListener('click', () => {
+
+
+            const input = document.getElementById('arrInput').value;
+            let arr = input.trim().split(',').map(Number);
+
+            document.getElementById('arr_result').innerHTML = "Ascending Order: " + arr.sort((a, b) => a - b).join(', ') + "<br>";
+
+            document.getElementById('arr_result').innerHTML += "Descending Order: " + arr.sort((a, b) => b - a).join(', ');
+        })
+    </script>
+
+</body>
+
+</html>
